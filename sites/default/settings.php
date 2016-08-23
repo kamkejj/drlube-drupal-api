@@ -711,18 +711,10 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  *
  * Keep this code block at the end of this file to take full effect.
  */
-# if (file_exists(__DIR__ . '/settings.local.php')) {
-#   include __DIR__ . '/settings.local.php';
-# }
-$databases['default']['default'] = array (
-  'database' => 'drlube_api',
-  'username' => 'root',
-  'password' => 'password',
-  'prefix' => '',
-  'host' => '127.0.0.1',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+}
+
 $settings['install_profile'] = 'standard';
-$config_directories['sync'] = 'sites/default/files/config_c0Q5deK6qbz1TMWivMX4356ng97E5xGVFjGNx2eHiogIoPhIPPL-2Y6vyxj3C3yu0cKXuXLeIA/sync';
+
+$config_directories['sync'] = '../config/drlube/sync';
